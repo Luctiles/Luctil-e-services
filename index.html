@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <link rel="icon" href="lukyamuzi.jpg" type="image/x">
+ 
+  <title>Hello, World!</title>
+</head>
+<body bgcolor="black">
+  <h1>
+    Hello, World!
+  </h1>
+<div class="profile-picture-upload">
+  <img src="default-profile-picture.jpg" alt="Profile Picture" id="profile-picture">
+  <input type="file" accept="image/*" id="profile-picture-input">
+  <label for="profile-picture-input">Upload Profile Picture</label>
+</div>
+  <style>
+  body{
+    padding: 0;
+    margin: 0;
+    text-align: center;
+  }
+.profile-picture-upload {
+  
+  position: fixed;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  overflow: hidden;
+  text-align: center;
+}
+  img{
+     position: center;
+  }
+
+.profile-picture-upload img {
+  position: center;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+   text-align: center;
+}
+
+.profile-picture-upload input[type="file"] {
+  display: none;
+}
+
+.profile-picture-upload label {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+</style>
+<script>
+const profilePictureInput = document.getElementById('profile-picture-input');
+const profilePicture = document.getElementById('profile-picture');
+
+profilePictureInput.addEventListener('change', (e) => {
+  const file = e.target.files[0];
+  const reader = new FileReader();
+  
+  reader.addEventListener('load', () => {
+    profilePicture.src = reader.result;
+  }, false);
+  
+  if (file) {
+    reader.readAsDataURL(file);
+  }
+});
+</script> 
+<html>
+<body>
+<h2>Celsius to Fahrenheit Converter</h2>
+<input type="number" id="celsius" placeholder="Enter temperature in Celsius">
+<button onclick="convert()">Convert</button>
+<h3 id="result"></h3>
+
+<script>
+function convert() {
+  var celsius = document.getElementById("celsius").value;
+  var fahrenheit = (celsius * 9/5) + 32;
+  var roundedFahrenheit = Math.round(fahrenheit * 100) / 100;
+  document.getElementById("result").innerHTML = celsius + "°C is equal to " + roundedFahrenheit + "°F";
+}
+</script>
+
+<style>
+body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+input, button {
+  padding: 10px;
+  font-size: 16px;
+}
+h3 {
+  color: #007bff;
+}
+</style>
+</body>
+</html>
+```
+These additions make the program more user-friendly and visually appealing. You can continue to build upon this foundation by adding more features, such as:
+
+- *Reverse conversion*: Add a button to convert Fahrenheit to Celsius.
+- *Error handling*: Display an error message if the user enters a non-numeric value.
+- *More conversions*: Add options to convert to other temperature scales, like Kelvin or Rankine.
+
+Let me know if you'd like to explore these ideas further!
+</body>
+</html>
