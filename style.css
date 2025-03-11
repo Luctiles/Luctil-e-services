@@ -6,7 +6,7 @@
   text-align: center;
   background-color: var(--background-color);
   color: var(--text-color);
-  background-image: url(pap.png);
+  background-image: url(paper.png);
 }
 :root {
   --primary-color: #007BFF; /* Blue */
